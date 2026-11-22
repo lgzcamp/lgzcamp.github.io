@@ -5,6 +5,7 @@ Laman GitHub Pages untuk LINDUNG Gen-Z Leaders Camp 2026 (1–5 Disember 2026, P
 - Laman: https://lgzcamp.github.io/
 - Google Site rasmi: https://sites.google.com/view/uumsocso
 - Borang pendaftaran: https://forms.gle/Bf7atdziwt3wAxjGA (tutup 22 Nov 2026, 6.00 ptg)
+- Kehadiran peserta : https://lgzcamp.github.io/attendance/
 
 ## Struktur
 - `index.html`: satu halaman (HTML, CSS dan JS dalam satu fail)
