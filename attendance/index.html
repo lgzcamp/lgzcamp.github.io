@@ -23,8 +23,8 @@
     import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode@1.5.4/+esm';
 
     // Add the Supabase Project URL and publishable (anon) key here after setup.
-    const SUPABASE_URL = 'YOUR_SUPABASE_PROJECT_URL';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_PUBLISHABLE_KEY';
+const SUPABASE_URL = 'https://jkpkbvutwgwykrfmgpwe.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable__QCKTZbXnvq7dXtMZ43aAQ_KQLL-ZYe';
     const ready = SUPABASE_URL.startsWith('https://') && !SUPABASE_ANON_KEY.includes('YOUR_');
     const db = ready ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
     const app = document.querySelector('#app');
