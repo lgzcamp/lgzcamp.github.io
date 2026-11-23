@@ -1,428 +1,187 @@
 <!doctype html>
-<html lang="ms">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LINDUNG Gen-Z Leaders Camp 2026 · PERKESO × SOSCoE UUM</title>
-<meta name="description" content="LINDUNG Gen-Z Leaders Camp 2026, 1–5 Disember 2026 di Pusat Rehabilitasi PERKESO Tun Abdul Razak, Ayer Keroh, Melaka. Percuma, sijil penyertaan disediakan. Daftar sebelum 22 November 2026, 6.00 petang.">
-<meta property="og:title" content="LINDUNG Gen-Z Leaders Camp 2026">
-<meta property="og:description" content="1–5 Disember 2026 · Pusat Rehabilitasi PERKESO Tun Abdul Razak, Ayer Keroh, Melaka · PERCUMA · Daftar sebelum 22 Nov 2026, 6.00 ptg">
-<meta property="og:image" content="https://lgzcamp.github.io/assets/poster-lgz2026.jpg">
-<meta property="og:url" content="https://lgzcamp.github.io/">
-<link rel="canonical" href="https://lgzcamp.github.io/">
-<meta name="theme-color" content="#071B3C">
-<link rel="icon" href="assets/emblem.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#071B3C;--navy2:#0F2C5E;--blue:#1E5BD8;--yellow:#F5B400;--ink:#0B1A33;--muted:#4A5873;--line:#DCE3EF;--bg:#F4F7FC;--r:20px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
-h1,h2,h3,.mont{font-family:Montserrat,system-ui,sans-serif}
-a{color:var(--blue)}
-img{max-width:100%;display:block}
-.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
-.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;padding:8px 12px;border-radius:8px}
-
-/* nav */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:16px;height:68px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font:800 17px Montserrat,sans-serif;white-space:nowrap}
-.brand img{width:40px;height:40px}
-.menu{display:flex;gap:4px;margin-left:auto;align-items:center}
-.menu a{color:var(--navy);text-decoration:none;font-weight:600;font-size:15px;padding:10px 12px;border-radius:10px}
-.menu a:hover{background:var(--bg)}
-.menu a.cta{background:var(--yellow);color:var(--navy);font-weight:800}
-.burger{display:none;margin-left:auto;background:none;border:0;width:44px;height:44px;border-radius:10px;cursor:pointer}
-@media(max-width:920px){
-  .burger{display:grid;place-items:center}
-  .menu{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:8px 16px 16px;border-bottom:1px solid var(--line)}
-  .menu.open{display:flex}
-  .menu a{padding:14px 12px}
-}
-
-/* hero */
-.hero{position:relative;color:#fff;background:var(--navy)}
-.hero-photo{height:min(62vh,560px);background:url(assets/rehab.jpg) center 70%/cover}
-.hero-body{background:var(--navy)}
-.hero-body .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;padding-top:36px;padding-bottom:44px;align-items:center}
-.eyebrow{font:700 13px Montserrat,sans-serif;letter-spacing:4px;color:var(--yellow);text-transform:uppercase}
-.hero h1{margin:8px 0 14px;font-size:clamp(36px,6vw,64px);line-height:1;font-weight:900}
-.hero h1 span{color:var(--yellow)}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-.chip{border:1.5px solid rgba(255,255,255,.5);border-radius:12px;padding:8px 14px;font-weight:600;font-size:15px}
-.chip.solid{background:#fff;color:var(--navy);border-color:#fff;font:800 15px Montserrat,sans-serif}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:14px;font:800 16px Montserrat,sans-serif;text-decoration:none}
-.btn.y{background:var(--yellow);color:var(--navy)}
-.btn.o{border:2px solid #fff;color:#fff}
-.btn.n{background:var(--navy);color:#fff}
-.btn.b{border:2px solid var(--navy);color:var(--navy)}
-.btn:hover{filter:brightness(1.07)}
-.count{background:var(--navy2);border-radius:var(--r);padding:22px}
-.count h2{margin:0 0 4px;font-size:15px;letter-spacing:2px;color:var(--yellow)}
-.count p{margin:0 0 14px;color:#C9D6EE;font-size:14px}
-.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.cd div{background:rgba(255,255,255,.07);border-radius:12px;padding:10px 4px;text-align:center}
-.cd b{display:block;font:900 30px Montserrat,sans-serif}
-.cd span{font-size:12px;color:#C9D6EE}
-@media(max-width:820px){.hero-body .wrap{grid-template-columns:1fr}.hero-photo{height:300px}}
-
-/* facts */
-.facts{margin-top:-1px;background:var(--navy);padding-bottom:40px}
-.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.fact{background:#fff;border-radius:18px;padding:18px;display:flex;gap:14px;align-items:center}
-.fact.y{background:var(--yellow)}
-.fact svg{flex:none}
-.fact b{display:block;font:800 18px Montserrat,sans-serif;color:var(--navy)}
-.fact span{font-size:14px;color:var(--muted)}
-.fact.y span{color:#3A2C00}
-@media(max-width:900px){.facts .wrap{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.facts .wrap{grid-template-columns:1fr}}
-
-/* sections */
-section.s{padding:64px 0}
-section.alt{background:#fff}
-.s h2.t{margin:0 0 8px;font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--navy)}
-.s p.lead{margin:0 0 28px;color:var(--muted);max-width:720px;font-size:17px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
-section.alt .card{background:var(--bg)}
-.card h3{margin:0 0 8px;color:var(--navy);font-size:20px}
-.card p{margin:0;color:var(--muted)}
-
-/* flow */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.flow div{background:var(--navy);color:#fff;border-radius:18px;padding:18px}
-.flow b{display:block;font:800 18px Montserrat,sans-serif;color:var(--yellow);margin-bottom:4px}
-.flow span{font-size:14px;color:#C9D6EE}
-@media(max-width:820px){.flow{grid-template-columns:1fr 1fr}}
-
-/* schedule */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.tabs button{font:800 15px Montserrat,sans-serif;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:12px;min-height:48px;padding:8px 16px;cursor:pointer}
-.tabs button[aria-selected=true]{background:var(--navy);color:#fff}
-.tabs button small{display:block;font:600 12px Inter,sans-serif;opacity:.8}
-.day{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.day.on{display:block}
-.day-h{background:var(--navy);color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
-.day-h b{font:900 24px Montserrat,sans-serif;color:var(--yellow)}
-.day-h span{font:800 16px Montserrat,sans-serif;letter-spacing:1px;text-transform:uppercase}
-.day ol{list-style:none;margin:0;padding:8px 0}
-.day li{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:14px 24px;border-bottom:1px dashed var(--line)}
-.day li:last-child{border-bottom:0}
-.day time{font-weight:700;color:var(--blue);font-size:15px}
-.day li b{display:block;color:var(--navy)}
-.day li small{color:var(--muted);font-size:14px}
-.tag{display:inline-block;font:700 11px Montserrat,sans-serif;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin-right:6px;vertical-align:2px}
-.t-ce{background:#E3ECFF;color:#173E9C}.t-si{background:#FFF1C7;color:#6B4D00}.t-kk{background:#E2F5E9;color:#1D6A3A}.t-fit{background:#FDE5EE;color:#8C1E4B}.t-csr{background:#EFE7FF;color:#4C2CA8}.t-pr{background:#E6F6FA;color:#0D5D70}
-@media(max-width:600px){.day li{grid-template-columns:1fr;gap:2px}}
-.note{font-size:14px;color:var(--muted);margin-top:12px}
-
-/* register */
-.reg{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;background:var(--navy);color:#fff;border-radius:28px;padding:32px}
-.reg .qr{background:#fff;border-radius:18px;padding:14px;width:240px}
-.reg h2{margin:0 0 6px;font-size:clamp(28px,4vw,40px);font-weight:900}
-.reg .dl{background:var(--yellow);color:var(--navy);border-radius:14px;padding:12px 18px;display:inline-block;margin:10px 0 16px}
-.reg .dl small{display:block;font:700 12px Montserrat,sans-serif;letter-spacing:3px}
-.reg .dl b{font:900 22px Montserrat,sans-serif}
-.reg ul{margin:0 0 18px;padding-left:20px;color:#DCE6FA}
-@media(max-width:720px){.reg{grid-template-columns:1fr;text-align:left}.reg .qr{width:200px}}
-
-/* links grid */
-.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.links a{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;min-height:96px}
-.links a:hover{border-color:var(--blue)}
-.links b{color:var(--navy);font:800 17px Montserrat,sans-serif}
-.links span{color:var(--muted);font-size:14px}
-
-/* map */
-.map{width:100%;height:360px;border:0;border-radius:var(--r)}
-
-/* footer */
-footer{background:var(--navy);color:#C9D6EE;padding:40px 0;font-size:14px}
-footer .logos{display:flex;flex-wrap:wrap;align-items:center;gap:28px;background:#fff;border-radius:18px;padding:16px 22px;width:fit-content;margin-bottom:20px}
-footer .logos img{height:52px;width:auto}
-footer .tags{color:#fff;font-weight:700}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071b3c" />
+  <title>LGZ 2026 | Attendance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--navy:#071b3c;--blue:#007dc5;--green:#8dc63e;--ink:#14223a;--muted:#68758b;--line:#e6ebf2;--paper:#f4f7fb;--white:#fff;--red:#d84747;--shadow:0 12px 35px rgba(7,27,60,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);font-family:'DM Sans',sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0}h1,h2,h3,p{margin-top:0}h1,h2,h3,.brand-title{font-family:Manrope,sans-serif}.hidden{display:none!important}
+    .topbar{height:72px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px);box-shadow:0 4px 18px #071b3c25}.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--blue),#06467c);display:grid;place-items:center;color:#fff;font-family:Manrope;font-weight:800;font-size:13px;box-shadow:inset 0 0 0 1px #ffffff30}.brand-title{font-size:15px;font-weight:800;letter-spacing:.02em}.brand-sub{font-size:10px;color:#a9c6e0;letter-spacing:.13em;text-transform:uppercase;margin-top:3px}.top-right{display:flex;align-items:center;gap:14px}.eyebrow{color:#92b7d8;font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}.pill{font-size:11px;background:#ffffff14;color:#cce8fa;border:1px solid #ffffff20;padding:7px 11px;border-radius:999px}
+    .container{width:min(1160px,calc(100% - 36px));margin:32px auto 60px}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:24px}.page-head h1{font-size:27px;margin:7px 0 5px;letter-spacing:-.04em}.subhead{font-size:13px;color:var(--muted);margin:0}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.btn{padding:11px 15px;border-radius:10px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.15s}.btn-primary{color:#fff;background:var(--blue);box-shadow:0 5px 14px #007dc533}.btn-primary:hover{background:#006bab;transform:translateY(-1px)}.btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-secondary:hover{background:#f7f9fc}.btn-danger{background:#fff1f1;color:var(--red)}.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}.grid{display:grid;gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stats{grid-template-columns:repeat(4,1fr);margin-bottom:22px}.stat{padding:18px 20px;position:relative;overflow:hidden}.stat:after{content:"";position:absolute;width:58px;height:58px;border-radius:50%;background:#007dc50b;right:-16px;top:-16px}.stat-label{color:var(--muted);font-size:11px;font-weight:600}.stat-value{font-family:Manrope;font-size:27px;letter-spacing:-.04em;font-weight:800;margin-top:7px}.stat-note{font-size:10px;color:#94a0b1;margin-top:3px}
+    .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.feature-card{width:100%;min-height:128px;padding:18px;display:flex;align-items:flex-start;gap:13px;text-align:left;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);transition:.16s}.feature-card:hover{transform:translateY(-2px);border-color:#b8d9ee;box-shadow:0 14px 28px rgba(7,27,60,.12)}.feature-icon{flex:0 0 43px;height:43px;border-radius:13px;background:#eaf5fc;color:var(--blue);display:grid;place-items:center;font-size:21px}.feature-card strong{display:block;font-family:Manrope;font-size:13px;margin:2px 0 7px}.feature-card small{display:block;font-size:11px;color:var(--muted);line-height:1.5}.welcome{padding:20px 22px;margin-bottom:17px;background:linear-gradient(115deg,#071b3c,#0a3c69);color:#fff;border-radius:15px;position:relative;overflow:hidden}.welcome h2{font-size:17px;margin:8px 0 5px}.welcome p{font-size:11px;color:#c1d5e6;margin:0}.welcome .eyebrow{color:#83c5ef}
+    .module-nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:18px}.module-nav .btn{padding:8px 11px;font-size:10px}.module-nav .active{background:var(--navy);color:#fff}.panel{padding:20px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:17px}.panel h2{font-size:15px;margin:0}.section-kicker{font-size:10px;color:var(--muted);margin-top:5px}.current{padding:17px;border-radius:13px;background:linear-gradient(115deg,#071b3c,#0a3c69);color:#fff;margin-bottom:17px;position:relative;overflow:hidden}.current-row{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;position:relative;z-index:1}.live-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#83c5ef;font-weight:700}.current h3{font-size:16px;margin:7px 0 4px}.current-meta{font-size:11px;color:#c1d5e6}.live-dot{width:8px;height:8px;background:var(--green);box-shadow:0 0 0 4px #8dc63e28;border-radius:50%;display:inline-block;margin-right:7px}.current-actions{display:flex;gap:7px;margin-top:15px;position:relative;z-index:1;flex-wrap:wrap}.current-actions .btn{padding:8px 11px;font-size:10px}.current-actions .btn-secondary{background:#ffffff17;border-color:#ffffff30;color:#fff}
+    .table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}th{font-size:9px;color:#8894a6;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:10px;border-bottom:1px solid var(--line)}td{font-size:11px;padding:12px 10px;border-bottom:1px solid #f0f3f7}tbody tr:last-child td{border-bottom:0}.session-name{font-weight:700;color:#21324d}.subcell{font-size:10px;color:#8995a6;margin-top:4px}.status{display:inline-flex;align-items:center;gap:6px;font-size:10px;padding:5px 9px;border-radius:999px;font-weight:700}.status-active{background:#edfaef;color:#378b4a}.status-closed{background:#f1f3f6;color:#788497}.text-btn{color:var(--blue);font-weight:700;background:none;padding:0;font-size:10px}.empty{color:#8390a2;text-align:center;padding:30px 12px;font-size:12px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}.toolbar input,.toolbar select{min-width:190px;flex:1;border:1px solid var(--line);background:#fff;border-radius:9px;padding:10px 11px;font-size:11px;color:var(--ink)}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}.metric{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#fbfdff}.metric small{display:block;color:var(--muted);font-size:10px}.metric strong{display:block;font:800 21px Manrope;margin-top:5px}.note{font-size:11px;line-height:1.55;padding:12px 14px;border:1px solid #d8eaf6;border-radius:10px;background:#f2f8fc;color:#52667d;margin:12px 0}.quick-help{padding:17px;border:1px solid var(--line);border-radius:13px;background:#fff;margin-top:16px}.quick-help h3{font-size:13px;margin:0 0 7px}.quick-help p{font-size:11px;color:var(--muted);line-height:1.55;margin:0}
+    .login-card{width:min(430px,100%);margin:60px auto;padding:28px}.login-card h1{font-size:24px;margin-bottom:8px}.field{display:grid;gap:7px;margin:15px 0}.field label{font-size:11px;font-weight:700;color:#3d4c62}.field input,.field select{width:100%;padding:12px 13px;border:1px solid #dce3ed;border-radius:10px;background:#fff;font-size:13px;outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #007dc518}.message{font-size:11px;color:var(--red);min-height:16px;margin:6px 0}.modal-backdrop{position:fixed;inset:0;background:#071b3c77;display:grid;place-items:center;padding:18px;z-index:9}.modal{width:min(540px,100%);padding:24px;max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.modal-head h2{margin:0;font-size:17px}.close{background:#eff3f8;color:#637087;width:31px;height:31px;border-radius:9px;font-size:17px}.qr-box{background:#f3f8fc;border:1px dashed #bdd7e9;border-radius:15px;min-height:230px;display:grid;place-items:center;margin:17px 0;padding:16px}.qr-box canvas,.qr-box img{max-width:100%}.url-box{font-size:10px;word-break:break-all;background:#f6f8fb;border-radius:8px;padding:9px;color:#5b6a80}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#10243f;color:#fff;padding:11px 15px;border-radius:10px;box-shadow:var(--shadow);z-index:20;font-size:12px}.check-page{min-height:calc(100vh - 72px);display:grid;place-items:start center;padding:45px 18px}.check-card{width:min(470px,100%);padding:28px}.check-logo{text-align:center;margin-bottom:23px}.check-logo .brand-mark{margin:0 auto 11px}.check-title{text-align:center;font-size:23px;margin-bottom:7px}.check-intro{text-align:center;color:var(--muted);font-size:12px;line-height:1.55}.session-chip{background:#f0f7fc;border:1px solid #d8eaf6;border-radius:11px;padding:12px 14px;margin:19px 0}.session-chip small{font-size:9px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.12em}.session-chip strong{display:block;margin-top:5px;font-size:13px}.check-result{text-align:center;padding:20px 5px}.result-icon{margin:0 auto 14px;width:54px;height:54px;border-radius:50%;background:#edfaef;color:#388b4b;display:grid;place-items:center;font-size:25px}.check-foot{text-align:center;color:#99a3b1;font-size:10px;margin-top:20px}.config-note{background:#fff8e7;color:#7d5b16;border:1px solid #f1dfa9;border-radius:9px;padding:10px 12px;font-size:11px;margin:0 0 15px}.footer{text-align:center;font-size:10px;color:#a1aaba;margin-top:32px}
+    @media(max-width:850px){.stats{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.metric-row{grid-template-columns:repeat(3,1fr)}}@media(max-width:580px){.topbar{height:64px;padding:0 16px}.top-right .pill{display:none}.container{width:calc(100% - 24px);margin:22px auto 40px}.page-head{display:block}.page-head h1{font-size:23px}.page-head .actions{margin-top:15px}.page-head .btn{flex:1}.stats{gap:9px}.stat{padding:14px}.stat-value{font-size:23px}.panel{padding:14px}.table-wrap{margin:0 -5px}.top-right{gap:6px}.login-card{margin:35px auto;padding:22px}.check-card{padding:22px}.feature-grid{grid-template-columns:1fr;gap:10px}.feature-card{min-height:92px;padding:14px}.metric-row{grid-template-columns:1fr 1fr}.module-nav{gap:6px}.module-nav .btn{flex:1}.page-head .actions .btn{flex:auto}}
+    @media print{body{background:#fff}.topbar,.module-nav,.actions,.toolbar,.btn,.text-btn,.footer{display:none!important}.container{width:100%;margin:0}.card{box-shadow:none;border-color:#ddd}.panel{padding:0}.page-head{margin-bottom:15px}}
+  </style>
 </head>
 <body>
-<a class="skip" href="#utama">Langkau ke kandungan</a>
+  <header class="topbar"><div class="brand"><div class="brand-mark">LGZ</div><div><div class="brand-title">LINDUNG Gen-Z Leaders Camp</div><div class="brand-sub">Attendance · 2026</div></div></div><div class="top-right"><span class="pill">PERKESO × UUM SBM</span><span class="eyebrow" id="topStatus">Programme dashboard</span></div></header>
+  <main id="app"></main><div id="modalRoot"></div><div id="toast" class="toast hidden"></div>
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/+esm';
+    import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode@1.5.4/+esm';
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#utama"><img src="assets/emblem.png" alt="">LGZ Camp '26</a>
-    <button class="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#071B3C" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <nav class="menu" id="menu" aria-label="Menu utama">
-      <a href="#program">Program</a>
-      <a href="#aturcara">Aturcara</a>
-      <a href="#penilaian">Penilaian</a>
-      <a href="#tiktok">TikTok</a>
-      <a href="#lokasi">Lokasi</a>
-      <a href="#laman">Google Site</a>
-      <a class="cta" href="#daftar">Daftar</a>
-    </nav>
-  </div>
-</header>
+    // Browser-safe project URL and publishable key. Never use a Supabase secret/service_role key here.
+    const SUPABASE_URL = 'https://jkpkbvutwgwykrfmgpwe.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable__QCKTZbXnvq7dXtMZ43aAQ_KQLL-ZYe';
+    const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const app = document.querySelector('#app');
+    const modalRoot = document.querySelector('#modalRoot');
+    const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const dateFmt = value => new Intl.DateTimeFormat('en-MY',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kuala_Lumpur'}).format(new Date(value));
+    const toast = message => { const el=document.querySelector('#toast');el.textContent=message;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),3200); };
+    let adminUser=null, currentSection='home', roster=[], sessions=[], attendance=[], confirmations=[], refreshTimer=null;
+    const modules=[
+      {id:'live',icon:'◉',title:'Live Attendance',desc:'Open a QR check-in and monitor arrivals for the current activity.'},
+      {id:'records',icon:'▤',title:'Attendance Records',desc:'Review check-ins across activities and find a participant or session.'},
+      {id:'history',icon:'◷',title:'Attendance History',desc:'Look up a participant and see their activity-by-activity history.'},
+      {id:'reports',icon:'▥',title:'Attendance Reports',desc:'Download CSV reports or print a report to save as PDF.'},
+      {id:'sessions',icon:'▦',title:'Session Management',desc:'Create activity QR sessions, show codes and close check-in windows.'},
+      {id:'directory',icon:'♙',title:'Participant Directory',desc:'Search participants, add or edit a record, and import roster updates.'},
+      {id:'confirmations',icon:'✓',title:'Participant Confirmation',desc:'Review who can attend the programme before the camp.'},
+    ];
 
-<main id="utama">
-<section class="hero" aria-label="Pengenalan">
-  <div class="hero-photo" role="img" aria-label="Papan tanda Pusat Rehabilitasi PERKESO Tun Abdul Razak, Ayer Keroh, Melaka"></div>
-  <div class="hero-body">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow">Kem Kepimpinan Keselamatan Sosial</div>
-        <h1>LINDUNG <span>Gen-Z</span><br>Leaders Camp 2026</h1>
-        <div class="chips">
-          <span class="chip solid">1 – 5 DISEMBER 2026</span>
-          <span class="chip">Pusat Rehabilitasi PERKESO Tun Abdul Razak, Ayer Keroh, Melaka</span>
-        </div>
-        <div class="btns">
-          <a class="btn y" href="https://forms.gle/Bf7atdziwt3wAxjGA" target="_blank" rel="noopener">Daftar Sekarang</a>
-          <a class="btn o" href="#aturcara">Lihat Aturcara</a>
-        </div>
-      </div>
-      <div class="count" aria-live="polite">
-        <h2 class="mont" id="cd-title">PENDAFTARAN DITUTUP DALAM</h2>
-        <p id="cd-sub">22 November 2026, 6.00 petang</p>
-        <div class="cd">
-          <div><b id="cd-d">–</b><span>hari</span></div>
-          <div><b id="cd-h">–</b><span>jam</span></div>
-          <div><b id="cd-m">–</b><span>minit</span></div>
-          <div><b id="cd-s">–</b><span>saat</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="facts">
-    <div class="wrap">
-      <div class="fact y"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#071B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><div><b>PERCUMA</b><span>Tiada yuran penyertaan</span></div></div>
-      <div class="fact"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#071B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><div><b>Sijil Penyertaan</b><span>Disediakan untuk setiap peserta</span></div></div>
-      <div class="fact"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#071B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><div><b>5 Hari 4 Malam</b><span>Selasa – Sabtu, 1–5 Dis 2026</span></div></div>
-      <div class="fact"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#071B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><div><b>Pelajar Universiti</b><span>UUM, UTeM, UiTM &amp; lain-lain</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="s" id="program">
-  <div class="wrap">
-    <h2 class="t">Tentang Program</h2>
-    <p class="lead">Program kediaman lima hari anjuran bersama PERKESO dan SOSCoE, Sekolah Pengurusan Perniagaan (SBM), Universiti Utara Malaysia, untuk membina kesedaran keselamatan sosial dan kepimpinan dalam kalangan Gen-Z sebelum mereka melangkah ke alam pekerjaan.</p>
-    <div class="flow" aria-label="Aliran harian">
-      <div><b>Ceramah</b><span>Pakar PERKESO berkongsi skim, perlindungan dan manfaat</span></div>
-      <div><b>Simulasi</b><span>Alami risiko kerja melalui aktiviti interaktif</span></div>
-      <div><b>Kajian Kes</b><span>Bincang situasi sebenar dalam pasukan</span></div>
-      <div><b>Refleksi</b><span>Rumuskan pelajaran dan reka tindakan</span></div>
-    </div>
-    <div class="grid3" style="margin-top:20px">
-      <div class="card"><h3>LINDUNG Fit</h3><p>Sesi riadah bertema empati dan inklusiviti, termasuk <i>Walk in Their Shoes</i>, <i>Inclusion in Action</i> dan bola tampar berkerusi bersama Warga OB.</p></div>
-      <div class="card"><h3>Hackathon Digital</h3><p>Projek kumpulan yang memuncak dengan <i>pitching</i> kempen atau dasar LINDUNG pada Hari 5.</p></div>
-      <div class="card"><h3>CSR di Pusat Rehab</h3><p>Menyantuni penghuni Pusat Rehabilitasi PERKESO dan aktiviti kebersamaan bersama Warga OB pada Hari 4.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="s alt" id="aturcara">
-  <div class="wrap">
-    <h2 class="t">Aturcara 5 Hari</h2>
-    <p class="lead">Satu tema keselamatan sosial setiap hari. Paparan di bawah menunjukkan aktiviti utama sahaja; waktu makan, solat dan rehat tidak disenaraikan.</p>
-    <div class="tabs" role="tablist" aria-label="Pilih hari">
-      <button role="tab" id="tab-1" aria-controls="d1" aria-selected="true">Hari 1<small>Sel, 1 Dis</small></button>
-      <button role="tab" id="tab-2" aria-controls="d2" aria-selected="false">Hari 2<small>Rab, 2 Dis</small></button>
-      <button role="tab" id="tab-3" aria-controls="d3" aria-selected="false">Hari 3<small>Kha, 3 Dis</small></button>
-      <button role="tab" id="tab-4" aria-controls="d4" aria-selected="false">Hari 4<small>Jum, 4 Dis</small></button>
-      <button role="tab" id="tab-5" aria-controls="d5" aria-selected="false">Hari 5<small>Sab, 5 Dis</small></button>
-    </div>
-
-    <div class="day on" id="d1" role="tabpanel" aria-labelledby="tab-1">
-      <div class="day-h"><b>HARI 1</b><span>Mengenali Risiko</span></div>
-      <ol>
-        <li><time>3.00 – 4.00 ptg</time><div><b>Pendaftaran peserta</b></div></li>
-        <li><time>4.00 – 6.00 ptg</time><div><b><span class="tag t-pr">Majlis</span>Taklimat Program</b></div></li>
-        <li><time>8.00 – 9.30 mlm</time><div><b><span class="tag t-si">Simulasi 1</span><i>Ice Breaking</i> dan “Lorong Hidup”</b></div></li>
-        <li><time>9.30 – 10.45 mlm</time><div><b><span class="tag t-kk">Kajian Kes 1</span>“Dua Graduan, Dua Nasib”</b></div></li>
-      </ol>
-    </div>
-
-    <div class="day" id="d2" role="tabpanel" aria-labelledby="tab-2">
-      <div class="day-h"><b>HARI 2</b><span>Ekonomi Gig dan Caruman Kendiri</span></div>
-      <ol>
-        <li><time>8.30 – 10.30 pg</time><div><b><span class="tag t-ce">Motivasi</span>Gen Z Generasi Strawberi: Menangkis Persepsi, Mendayakan Peribadi</b><small>En. Amin Idris</small></div></li>
-        <li><time>10.45 pg – 12.30 tgh</time><div><b><span class="tag t-kk">Kajian Kes 2</span>Platform, Pekerja dan Akta 872</b></div></li>
-        <li><time>2.00 – 4.30 ptg</time><div><b><span class="tag t-ce">Ceramah 1</span>Perlindungan Keselamatan Sosial di Malaysia: Isu dan Cabaran</b><small>En. Abdul Rahim bin Wahab &amp; En. Ahmad Khairulnizam bin Mat Sulaiman (PERKESO)</small></div></li>
-        <li><time>5.30 – 6.45 ptg</time><div><b><span class="tag t-fit">LINDUNG Fit 1</span><i>Walk in Their Shoes</i></b></div></li>
-        <li><time>8.15 – 10.30 mlm</time><div><b><span class="tag t-pr">Projek</span>Taklimat Projek Kumpulan dan Hackathon Digital</b></div></li>
-      </ol>
-    </div>
-
-    <div class="day" id="d3" role="tabpanel" aria-labelledby="tab-3">
-      <div class="day-h"><b>HARI 3</b><span>Keselamatan dan Kesihatan Pekerjaan</span></div>
-      <ol>
-        <li><time>8.30 – 10.30 pg</time><div><b><span class="tag t-ce">Ceramah 2</span>PERKESO: Skop Perlindungan dan Manfaat</b><small>Pn. Dewi Murni binti Hamid &amp; En. Abdul Rahim bin Wahab (PERKESO)</small></div></li>
-        <li><time>10.45 pg – 12.30 tgh</time><div><b><span class="tag t-si">Simulasi 2</span><i>Hazard Hunt</i></b></div></li>
-        <li><time>2.00 – 4.30 ptg</time><div><b><span class="tag t-si">Simulasi 3</span><i>Gig Lab</i>: Seminggu Menjadi Pekerja Gig</b></div></li>
-        <li><time>5.30 – 6.45 ptg</time><div><b><span class="tag t-fit">LINDUNG Fit 2</span><i>Inclusion in Action</i></b></div></li>
-        <li><time>8.15 – 9.30 mlm</time><div><b><span class="tag t-kk">Kajian Kes 3</span>Kemalangan di Tapak Kerja</b></div></li>
-        <li><time>9.30 – 10.45 mlm</time><div><b><span class="tag t-si">Simulasi 4</span>Klinik Tuntutan</b></div></li>
-      </ol>
-    </div>
-
-    <div class="day" id="d4" role="tabpanel" aria-labelledby="tab-4">
-      <div class="day-h"><b>HARI 4</b><span>Kehilangan Kerja dan Kerjaya</span></div>
-      <ol>
-        <li><time>8.30 – 10.30 pg</time><div><b><span class="tag t-ce">Ceramah 3</span>Persediaan Graduan: Memahami SIP Sebelum Melangkah ke Pasaran Kerja</b><small>Pn. Hazah binti Mahmad Toha &amp; En. Azlin bin Abd Aziz (PERKESO)</small></div></li>
-        <li><time>10.50 pg – 12.30 tgh</time><div><b><span class="tag t-csr">CSR</span>Menyantuni Penghuni Pusat Rehab</b></div></li>
-        <li><time>3.00 – 4.30 ptg</time><div><b><span class="tag t-csr">CSR</span>Kebersamaan bersama Warga OB</b></div></li>
-        <li><time>5.00 – 6.45 ptg</time><div><b><span class="tag t-fit">LINDUNG Fit 3</span>Liga Sukan Bola Tampar Berkerusi bersama Warga OB</b></div></li>
-        <li><time>8.15 – 10.30 mlm</time><div><b><span class="tag t-pr">Pasukan</span>Malam Kreatif LINDUNG: TikTok Challenge</b></div></li>
-      </ol>
-    </div>
-
-    <div class="day" id="d5" role="tabpanel" aria-labelledby="tab-5">
-      <div class="day-h"><b>HARI 5</b><span>Sintesis dan Tindakan</span></div>
-      <ol>
-        <li><time>6.30 – 7.30 pg</time><div><b><span class="tag t-fit">LINDUNG Fit</span>Senamrobik bersama Warga OB</b></div></li>
-        <li><time>9.00 – 10.00 pg</time><div><b><span class="tag t-pr">Majlis</span>Pelancaran Perpustakaan Digital</b></div></li>
-        <li><time>10.00 – 11.30 pg</time><div><b><span class="tag t-pr"><i>Pitching</i></span>Reka Kempen atau Dasar LINDUNG</b></div></li>
-        <li><time>11.30 pg – 12.00 tgh</time><div><b><span class="tag t-kk">Penilaian</span>Refleksi akhir dan ujian pasca program</b></div></li>
-        <li><time>12.00 tgh – 1.00 ptg</time><div><b><span class="tag t-pr">Majlis</span>Majlis Perasmian &amp; Penutupan, Penyampaian Sijil</b></div></li>
-        <li><time>2.30 ptg</time><div><b><i>Check-out</i></b></div></li>
-      </ol>
-    </div>
-    <p class="note">Pelajar UUM: bas bertolak dari Inasis UUM pada 1 Dis 2026, 7.00 pagi. Aturcara tertakluk kepada perubahan; versi terkini di <a href="https://sites.google.com/view/uumsocso/itinerari" target="_blank" rel="noopener">halaman Itinerari Google Site</a>.</p>
-  </div>
-</section>
-
-<section class="s" id="daftar">
-  <div class="wrap">
-    <div class="reg">
-      <img class="qr" src="assets/qr-daftar.png" alt="Kod QR borang pendaftaran: forms.gle/Bf7atdziwt3wAxjGA">
-      <div>
-        <h2>Imbas &amp; Daftar</h2>
-        <div class="dl"><small>TARIKH AKHIR PENDAFTARAN</small><b>22 November 2026 · sebelum 6.00 ptg</b></div>
-        <ul>
-          <li>Isi borang dalam talian (lebih kurang 5 minit).</li>
-          <li>Sediakan no. matrik, no. telefon waris kecemasan dan saiz baju.</li>
-          <li>Nama penuh anda akan dicetak pada sijil penyertaan.</li>
-        </ul>
-        <div class="btns">
-          <a class="btn y" href="https://forms.gle/Bf7atdziwt3wAxjGA" target="_blank" rel="noopener">Buka Borang Pendaftaran</a>
-          <a class="btn o" href="assets/poster-lgz2026.jpg" download>Muat Turun Poster</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="s alt" id="penilaian">
-  <div class="wrap">
-    <h2 class="t">Penilaian Pra &amp; Pasca</h2>
-    <p class="lead">Soal selidik kesedaran keselamatan sosial untuk mengukur keberkesanan program. Jawab hanya apabila diminta oleh fasilitator.</p>
-    <div class="grid2">
-      <div class="card"><h3>Pra-Survey · Hari 1</h3><p style="margin-bottom:16px">Dijawab sebelum aktiviti bermula pada 1 Disember 2026.</p><a class="btn n" href="https://docs.google.com/forms/d/e/1FAIpQLSd7mnCCz7fiS-9K4t5CI4DAz3cGOFeqZtjPjmYTko4VXQq8Jg/viewform" target="_blank" rel="noopener">Jawab Pra-Survey</a></div>
-      <div class="card"><h3>Pasca-Survey · Hari 5</h3><p style="margin-bottom:16px">Dijawab semasa refleksi akhir, 5 Disember 2026, 11.30 pagi.</p><a class="btn n" href="https://docs.google.com/forms/d/e/1FAIpQLSdoYRReg2GXZQsWGpyC-4x3wzUWcmKPRHlhcQFjivo2ASXBuw/viewform" target="_blank" rel="noopener">Jawab Pasca-Survey</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="s" id="tiktok">
-  <div class="wrap">
-    <div class="grid2" style="align-items:center">
-      <div>
-        <h2 class="t">TikTok Creator Challenge</h2>
-        <p class="lead" style="margin-bottom:16px">Hasilkan video pendek berkumpulan tentang mesej keselamatan sosial. Lima video terbaik (<b>Best 5</b>) akan ditampilkan.</p>
-        <p style="margin:0 0 18px"><b>Penyertaan ditutup:</b> 4 Disember 2026, 6.00 petang<br><b>Tanda pagar wajib:</b> #PERKESO #SOSCoE #LindungSquad #LindungGenZ #LGZCamp26 #UUM</p>
-        <div class="btns">
-          <a class="btn n" href="https://forms.gle/FjosxiNHyKmmMXF36" target="_blank" rel="noopener">Hantar Penyertaan</a>
-          <a class="btn b" href="https://sites.google.com/view/uumsocso/tiktok-challenge" target="_blank" rel="noopener">Syarat Penuh</a>
-        </div>
-      </div>
-      <div class="card"><h3>Ringkasan</h3><p>Video berdurasi 30–90 saat · penyertaan berkumpulan · syarat, rubrik pemarkahan dan borang ada di halaman TikTok Challenge Google Site.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="s alt" id="lokasi">
-  <div class="wrap">
-    <h2 class="t">Lokasi</h2>
-    <p class="lead">Pusat Rehabilitasi PERKESO Tun Abdul Razak, Ayer Keroh, Melaka.</p>
-    <div class="grid2" style="align-items:start">
-      <iframe class="map" title="Peta Pusat Rehabilitasi PERKESO Tun Abdul Razak" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Pusat+Rehabilitasi+PERKESO+Tun+Abdul+Razak+Ayer+Keroh+Melaka&output=embed"></iframe>
-      <div class="card">
-        <h3>Navigasi</h3>
-        <p style="margin-bottom:16px">Gunakan aplikasi <b>TuJu</b> dan cari “Pusat Rehabilitasi PERKESO Tun Abdul Razak”, atau buka Google Maps.</p>
-        <div class="btns">
-          <a class="btn n" href="https://www.tuju.my" target="_blank" rel="noopener">Aplikasi TuJu</a>
-          <a class="btn b" href="https://www.google.com/maps/search/?api=1&query=Pusat+Rehabilitasi+PERKESO+Tun+Abdul+Razak+Ayer+Keroh+Melaka" target="_blank" rel="noopener">Google Maps</a>
-        </div>
-        <p style="margin-top:18px"><b>Adab di Pusat Rehabilitasi:</b> kawasan ini ialah pusat rawatan. Jaga ketenteraman dan hormati penghuni serta kakitangan sepanjang program.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="s" id="laman">
-  <div class="wrap">
-    <h2 class="t">Laman Rasmi Google Site</h2>
-    <p class="lead">Maklumat lengkap dan dikemas kini oleh urus setia ada di <a href="https://sites.google.com/view/uumsocso" target="_blank" rel="noopener">sites.google.com/view/uumsocso</a>.</p>
-    <div class="links">
-      <a href="https://sites.google.com/view/uumsocso/utama" target="_blank" rel="noopener"><b>Utama</b><span>Pengenalan dan kiraan detik</span></a>
-      <a href="https://sites.google.com/view/uumsocso/itinerari" target="_blank" rel="noopener"><b>Itinerari</b><span>Jadual penuh 5 hari</span></a>
-      <a href="https://sites.google.com/view/uumsocso/peserta" target="_blank" rel="noopener"><b>Peserta</b><span>Senarai peserta dan pasukan</span></a>
-      <a href="https://sites.google.com/view/uumsocso/team" target="_blank" rel="noopener"><b>Team</b><span>Jawatankuasa pelaksana</span></a>
-      <a href="https://sites.google.com/view/uumsocso/t-shirt-program" target="_blank" rel="noopener"><b>T-Shirt Program</b><span>Reka bentuk dan saiz baju</span></a>
-      <a href="https://sites.google.com/view/uumsocso/tiktok-challenge" target="_blank" rel="noopener"><b>TikTok Challenge</b><span>Syarat dan borang penyertaan</span></a>
-      <a href="https://sites.google.com/view/uumsocso/others/lokasi" target="_blank" rel="noopener"><b>Lokasi &amp; Logistik</b><span>Pengangkutan dan barang dibawa</span></a>
-      <a href="https://sites.google.com/view/uumsocso/others/galeri" target="_blank" rel="noopener"><b>Galeri</b><span>Foto dan poster program</span></a>
-      <a href="https://sites.google.com/view/uumsocso/others/penilaian-pra-pasca" target="_blank" rel="noopener"><b>Penilaian Pra &amp; Pasca</b><span>Soal selidik Hari 1 dan Hari 5</span></a>
-      <a href="https://sites.google.com/view/uumsocso/others/hubungi" target="_blank" rel="noopener"><b>Hubungi</b><span>Urus setia program</span></a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="logos">
-      <img src="assets/logo-perkeso.png" alt="PERKESO">
-      <img src="assets/logo-uum.png" alt="Universiti Utara Malaysia">
-      <img src="assets/logo-soscoe.png" alt="SOSCoE" style="height:34px">
-    </div>
-    <p>© 2026 LINDUNG Gen-Z Leaders Camp · Anjuran bersama PERKESO &amp; SOSCoE, SBM Universiti Utara Malaysia</p>
-    <p class="tags">#PERKESO #LindungGenZ #LindungSquad #LGZCamp26</p>
-  </div>
-</footer>
-
-<script>
-// menu
-const bg=document.querySelector('.burger'),mn=document.getElementById('menu');
-bg.addEventListener('click',()=>{const o=mn.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
-mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');bg.setAttribute('aria-expanded',false)}));
-
-// tabs (auto-open today's tab during the camp)
-const tabs=[...document.querySelectorAll('[role=tab]')];
-function show(i){tabs.forEach((t,j)=>{t.setAttribute('aria-selected',j===i);document.getElementById(t.getAttribute('aria-controls')).classList.toggle('on',j===i)})}
-tabs.forEach((t,i)=>{t.addEventListener('click',()=>show(i));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight')tabs[(i+1)%5].focus(),show((i+1)%5);if(e.key==='ArrowLeft')tabs[(i+4)%5].focus(),show((i+4)%5)})});
-const day=Math.floor((Date.now()-Date.parse('2026-12-01T00:00:00+08:00'))/864e5);if(day>=0&&day<5)show(day);
-
-// countdown: registration deadline, then camp start
-const REG=Date.parse('2026-11-22T18:00:00+08:00'),START=Date.parse('2026-12-01T16:00:00+08:00'),END=Date.parse('2026-12-05T14:30:00+08:00');
-const $=id=>document.getElementById(id);
-function tick(){
-  const now=Date.now();let target;
-  if(now<REG){target=REG}
-  else if(now<START){target=START;$('cd-title').textContent='PROGRAM BERMULA DALAM';$('cd-sub').textContent='Pendaftaran telah ditutup · 1 Disember 2026';}
-  else{$('cd-title').textContent=now<END?'PROGRAM SEDANG BERLANGSUNG':'TERIMA KASIH, #LINDUNGSQUAD';$('cd-sub').textContent='1 – 5 Disember 2026';['d','h','m','s'].forEach(k=>$('cd-'+k).textContent='0');return}
-  let s=Math.max(0,Math.floor((target-now)/1000));
-  $('cd-d').textContent=Math.floor(s/86400);s%=86400;$('cd-h').textContent=Math.floor(s/3600);s%=3600;$('cd-m').textContent=Math.floor(s/60);$('cd-s').textContent=s%60;
-}
-tick();setInterval(tick,1000);
-</script>
+    function checkInPage(){
+      const params=new URLSearchParams(location.search),sessionId=params.get('session'),token=params.get('token');
+      app.innerHTML=`<section class="check-page"><div class="card check-card"><div class="check-logo"><div class="brand-mark">LGZ</div><div class="eyebrow" style="color:#60748e">PERKESO × UUM SBM</div></div><div id="checkContent"><h1 class="check-title">Activity check-in</h1><p class="check-intro">Enter your LGZ participant ID or matric number to record attendance.</p><div class="session-chip"><small>Activity session</small><strong id="sessionTitle">Loading session…</strong></div><form id="checkForm"><div class="field"><label for="participantCode">Participant ID / Matric No.</label><input id="participantCode" required autocomplete="off" placeholder="e.g. LGZ-001 or your matric number" maxlength="40" /></div><p class="message" id="checkMessage"></p><button class="btn btn-primary" style="width:100%;padding:13px" type="submit">Confirm attendance</button></form><div class="check-foot">LINDUNG Gen-Z Leaders Camp 2026</div></div></div></section>`;
+      if(!sessionId||!token){document.querySelector('#sessionTitle').textContent='Invalid QR code';document.querySelector('#checkForm').classList.add('hidden');return;}
+      db.rpc('get_public_session',{p_session_id:sessionId,p_qr_token:token}).then(({data,error})=>{if(error||!data?.ok){document.querySelector('#sessionTitle').textContent='This session is closed or unavailable';document.querySelector('#checkForm').classList.add('hidden');return;}document.querySelector('#sessionTitle').textContent=data.activity_label;});
+      document.querySelector('#checkForm').addEventListener('submit',async e=>{e.preventDefault();const btn=e.submitter;btn.disabled=true;btn.textContent='Checking…';const code=document.querySelector('#participantCode').value.trim();const {data,error}=await db.rpc('lgz_check_in',{p_session_id:sessionId,p_qr_token:token,p_participant_code:code});if(error||!data?.ok){document.querySelector('#checkMessage').textContent=data?.message||'We could not record this check-in. Check your ID and try again.';btn.disabled=false;btn.textContent='Confirm attendance';return;}const isDup=data.status==='already_recorded';document.querySelector('#checkContent').innerHTML=`<div class="check-result"><div class="result-icon">✓</div><h1 class="check-title">${isDup?'Already recorded':'You’re checked in'}</h1><p class="check-intro">${isDup?'Your attendance for this activity was already recorded.':'Your attendance has been recorded successfully.'}</p><div class="session-chip"><small>Activity session</small><strong>${esc(data.activity_label)}</strong></div><div class="check-foot">You can close this page now.</div></div>`;});
+    }
+    function confirmationPage(){
+      document.querySelector('#topStatus').textContent='Participant RSVP';
+      app.innerHTML=`<section class="check-page"><div class="card check-card"><div class="check-logo"><div class="brand-mark">LGZ</div><div class="eyebrow" style="color:#60748e">PERKESO × UUM SBM</div></div><div id="confirmContent"><h1 class="check-title">Confirm your attendance</h1><p class="check-intro">Please confirm whether you can attend LINDUNG Gen-Z Leaders Camp 2026. Enter your LGZ participant ID and matric number. If you do not know your LGZ ID, use your matric number in both fields.</p><form id="confirmForm"><div class="field"><label for="confirmCode">LGZ participant ID or matric number</label><input id="confirmCode" required autocomplete="off" maxlength="40" placeholder="LGZ ID, or your matric number" /></div><div class="field"><label for="confirmMatric">Matric number</label><input id="confirmMatric" required autocomplete="off" maxlength="40" placeholder="Your matric number" /></div><div class="field"><label for="confirmResponse">Your confirmation</label><select id="confirmResponse" required><option value="">Select one response</option><option value="attending">Yes, I can attend</option><option value="cannot_attend">No, I cannot attend</option><option value="unsure">I am not sure yet</option></select></div><p class="message" id="confirmMessage" aria-live="polite"></p><button class="btn btn-primary" id="confirmSubmit" style="width:100%;padding:13px" type="submit">Submit confirmation</button></form><div class="check-foot">Your response is shared with the LGZ organising team only.</div></div></div></section>`;
+      document.querySelector('#confirmForm').addEventListener('submit',async e=>{e.preventDefault();const btn=document.querySelector('#confirmSubmit'),message=document.querySelector('#confirmMessage');btn.disabled=true;btn.textContent='Submitting…';message.textContent='';const {data,error}=await db.rpc('lgz_submit_confirmation',{p_participant_code:document.querySelector('#confirmCode').value.trim(),p_matric_no:document.querySelector('#confirmMatric').value.trim(),p_response:document.querySelector('#confirmResponse').value});if(error||!data?.ok){message.textContent=data?.message||'We could not submit your response. Please check your details and try again.';btn.disabled=false;btn.textContent='Submit confirmation';return;}const labels={attending:'You confirmed that you can attend.',cannot_attend:'Your response that you cannot attend has been recorded.',unsure:'Your response has been recorded.'};document.querySelector('#confirmContent').innerHTML=`<div class="check-result"><div class="result-icon">✓</div><h1 class="check-title">Confirmation received</h1><p class="check-intro">${labels[data.response]||'Your response has been recorded.'}</p><p class="check-foot">You can submit again if your plans change.</p></div>`;});
+    }
+    function loginPage(message=''){
+      document.querySelector('#topStatus').textContent='Admin access';
+      app.innerHTML=`<section class="login-card card"><div class="eyebrow" style="color:#007dc5">LGZ TEAM ACCESS</div><h1 style="margin-top:9px">Sign in to manage attendance</h1><p class="subhead">Use the administrator account created in Supabase.</p><form id="loginForm"><div class="field"><label>Email</label><input id="email" type="email" autocomplete="username" required placeholder="name@example.com" /></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Your password" /></div><p class="message">${esc(message)}</p><button class="btn btn-primary" style="width:100%" type="submit">Sign in</button></form><p class="check-foot">Administrator accounts are managed by the LGZ system owner.</p></section>`;
+      document.querySelector('#loginForm').addEventListener('submit',async e=>{e.preventDefault();const {data,error}=await db.auth.signInWithPassword({email:document.querySelector('#email').value,password:document.querySelector('#password').value});if(error){loginPage('Sign-in failed. Check your email and password.');return;}adminUser=data.user;await dashboard();});
+    }
+    async function dashboard(){
+      if(!adminUser){const {data}=await db.auth.getSession();adminUser=data.session?.user||null;}
+      if(!adminUser){loginPage();return;}
+      const {data:allowed,error:accessError}=await db.rpc('is_lgz_admin');
+      if(accessError||!allowed){await db.auth.signOut();adminUser=null;loginPage('This account does not have LGZ administrator access.');return;}
+      document.querySelector('#topStatus').textContent='Admin dashboard';
+      app.innerHTML='<div class="container"><div id="workspace"></div><div class="footer">LINDUNG Gen-Z Leaders Camp 2026 · PERKESO × UUM SBM</div></div>';
+      await loadDashboard();
+    }
+    async function loadDashboard(){
+      const [p,s,a,c]=await Promise.all([
+        db.from('lgz_participants').select('id,participant_code,full_name,matric_no,gender,affiliation,university,email,phone,confirmation_status,confirmation_at,created_at').order('full_name'),
+        db.from('lgz_sessions').select('*').order('created_at',{ascending:false}),
+        db.from('lgz_attendance_view').select('*').order('checked_in_at',{ascending:false}),
+      ]);
+      if(p.error||s.error||a.error){toast('Could not load records. Check the Supabase setup and access policies.');return;}
+      roster=p.data||[];sessions=s.data||[];attendance=a.data||[];confirmations=roster.filter(p=>p.confirmation_status);renderWorkspace();
+    }
+    function sessionIsActive(row){const now=Date.now();return row.is_open&&now>=new Date(row.starts_at).getTime()&&now<=new Date(row.closes_at).getTime();}
+    function countsBySession(){const counts={};attendance.forEach(x=>counts[x.session_id]=(counts[x.session_id]||0)+1);return counts;}
+    function renderWorkspace(){
+      const area=document.querySelector('#workspace');if(!area)return;
+      if(refreshTimer){clearInterval(refreshTimer);refreshTimer=null;}
+      const active=sessions.find(sessionIsActive),counts=countsBySession();
+      const title=currentSection==='home'?'Attendance dashboard':modules.find(x=>x.id===currentSection)?.title||'Attendance dashboard';
+      area.innerHTML=`<div class="page-head"><div><div class="eyebrow" style="color:#007dc5">LGZ 2026 · PROGRAMME CONTROL</div><h1>${esc(title)}</h1><p class="subhead">Manage check-ins and attendance records for every camp activity.</p></div><div class="actions"><button class="btn btn-secondary" id="importBtn">＋ Import roster</button><button class="btn btn-primary" id="newSessionBtn">＋ New activity QR</button><button class="btn btn-secondary" id="signOutBtn">Sign out</button></div></div>${currentSection==='home'?homeView(counts,active):moduleNav()+moduleView(counts,active)}`;
+      document.querySelector('#importBtn').onclick=importModal;document.querySelector('#newSessionBtn').onclick=createSessionModal;document.querySelector('#signOutBtn').onclick=async()=>{await db.auth.signOut();adminUser=null;loginPage();};
+      if(currentSection==='home')bindHome();else bindModule();
+    }
+    function homeView(counts,active){
+      return `<div class="welcome"><div class="eyebrow">PERKESO × UUM SBM</div><h2>Assalamualaikum, LGZ team</h2><p>Choose a section to manage the camp attendance system.</p></div><section class="grid stats"><div class="card stat"><div class="stat-label">Registered participants</div><div class="stat-value">${roster.length}</div><div class="stat-note">In the LGZ roster</div></div><div class="card stat"><div class="stat-label">Attendance entries</div><div class="stat-value">${attendance.length}</div><div class="stat-note">Across all activities</div></div><div class="card stat"><div class="stat-label">Activities tracked</div><div class="stat-value">${sessions.length}</div><div class="stat-note">QR attendance sessions</div></div><div class="card stat"><div class="stat-label">Live session</div><div class="stat-value">${active?'1':'0'}</div><div class="stat-note">${active?esc(active.activity_label):'No open check-in window'}</div></div></section><section class="grid feature-grid">${modules.map(m=>`<button class="feature-card" data-go="${m.id}"><span class="feature-icon">${m.icon}</span><span><strong>${m.title}</strong><small>${m.desc}</small></span></button>`).join('')}</section>`;
+    }
+    function moduleNav(){return `<nav class="module-nav"><button class="btn btn-secondary" data-go="home">← Dashboard</button>${modules.map(m=>`<button class="btn ${m.id===currentSection?'active':'btn-secondary'}" data-go="${m.id}">${m.title}</button>`).join('')}</nav>`;}
+    function moduleView(counts,active){
+      if(currentSection==='live')return liveView(counts,active);
+      if(currentSection==='records')return recordsView();
+      if(currentSection==='history')return historyView();
+      if(currentSection==='reports')return reportsView(counts);
+      if(currentSection==='sessions')return sessionsView(counts);
+      if(currentSection==='directory')return directoryView();
+      if(currentSection==='confirmations')return confirmationsView();
+      return homeView(counts,active);
+    }
+    function confirmationsView(){
+      const attending=confirmations.filter(x=>x.confirmation_status==='attending').length,cannot=confirmations.filter(x=>x.confirmation_status==='cannot_attend').length,unsure=confirmations.filter(x=>x.confirmation_status==='unsure').length;
+      return `<section class="grid stats"><div class="card stat"><div class="stat-label">Responses received</div><div class="stat-value">${confirmations.length}</div><div class="stat-note">Of ${roster.length} registered participants</div></div><div class="card stat"><div class="stat-label">Can attend</div><div class="stat-value">${attending}</div><div class="stat-note">Confirmed attending</div></div><div class="card stat"><div class="stat-label">Cannot attend</div><div class="stat-value">${cannot}</div><div class="stat-note">Reported unavailable</div></div><div class="card stat"><div class="stat-label">Not sure</div><div class="stat-value">${unsure}</div><div class="stat-note">Need follow-up</div></div></section><section class="card panel"><div class="panel-head"><div><h2>Programme attendance confirmation</h2><div class="section-kicker">Share the RSVP link through WhatsApp. This list updates when you refresh.</div></div><div class="actions"><button class="btn btn-secondary" id="refreshConfirmations">↻ Refresh</button><button class="btn btn-secondary" id="copyConfirmationLink">Copy participant form link</button><button class="btn btn-primary" id="exportConfirmations">Download CSV</button></div></div><div class="note">Participant confirmation is separate from QR check-ins. The QR records actual attendance at each activity.</div><div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Matric No.</th><th>Name</th><th>University</th><th>Response</th><th>Submitted</th></tr></thead><tbody>${roster.length?roster.map(p=>`<tr><td>${esc(p.participant_code)}</td><td>${esc(p.matric_no)}</td><td>${esc(p.full_name)}</td><td>${esc(p.university||p.affiliation)}</td><td>${p.confirmation_status?`<span class="status ${p.confirmation_status==='attending'?'status-active':'status-closed'}">${p.confirmation_status==='attending'?'Can attend':p.confirmation_status==='cannot_attend'?'Cannot attend':'Not sure'}</span>`:'<span class="subcell">No response</span>'}</td><td>${p.confirmation_at?dateFmt(p.confirmation_at):'—'}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">No participants are in the roster yet.</td></tr>'}</tbody></table></div></section>`;
+    }
+    function liveView(counts,active){
+      const rows=active?attendance.filter(x=>x.session_id===active.id):[];
+      return `<section class="grid stats"><div class="card stat"><div class="stat-label">Open session</div><div class="stat-value">${active?'1':'0'}</div><div class="stat-note">${active?esc(active.activity_label):'No live check-in'}</div></div><div class="card stat"><div class="stat-label">Check-ins now</div><div class="stat-value">${rows.length}</div><div class="stat-note">For the current activity</div></div><div class="card stat"><div class="stat-label">Roster size</div><div class="stat-value">${roster.length}</div><div class="stat-note">Registered participants</div></div><div class="card stat"><div class="stat-label">Last refreshed</div><div class="stat-value" style="font-size:15px">${dateFmt(new Date())}</div><div class="stat-note">Select Refresh to update counts</div></div></section><section class="card panel"><div class="panel-head"><div><h2>Live attendance</h2><div class="section-kicker">Open the session QR and watch check-ins arrive.</div></div><button class="btn btn-secondary" id="refreshBtn">↻ Refresh</button></div>${active?`<div class="current"><div class="current-row"><div><div class="live-label"><span class="live-dot"></span>LIVE CHECK-IN</div><h3>${esc(active.activity_label)}</h3><div class="current-meta">${rows.length} check-ins · Closes ${dateFmt(active.closes_at)}</div></div><div style="text-align:right"><div class="eyebrow">PRESENT</div><div style="font:800 25px Manrope;margin-top:6px">${rows.length}</div></div></div><div class="current-actions"><button class="btn btn-secondary" data-qr="${active.id}">Show QR code</button><button class="btn btn-secondary" data-close="${active.id}">Close check-in</button></div></div>`:'<p class="note">There is no open session. Select <b>New activity QR</b> to start check-in for an activity.</p>'}<div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Name</th><th>Affiliation</th><th>Checked in</th></tr></thead><tbody>${rows.length?rows.map(x=>`<tr><td>${esc(x.participant_code)}</td><td>${esc(x.full_name)}</td><td>${esc(x.affiliation)}</td><td>${dateFmt(x.checked_in_at)}</td></tr>`).join(''):'<tr><td colspan="4" class="empty">No check-ins recorded for this session yet.</td></tr>'}</tbody></table></div></section>`;
+    }
+    function recordsView(){
+      return `<section class="card panel"><div class="panel-head"><div><h2>All attendance records</h2><div class="section-kicker">Search across check-ins from every activity.</div></div><button class="btn btn-secondary" id="exportRecordsBtn">⇩ Export CSV</button></div><div class="toolbar"><input id="recordSearch" placeholder="Search name, ID, matric, university or activity" /><select id="recordSession"><option value="">All activities</option>${sessions.map(s=>`<option value="${s.id}">${esc(s.activity_label)}</option>`).join('')}</select></div><div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Matric No.</th><th>Name</th><th>Gender</th><th>University</th><th>Activity</th><th>Checked in</th></tr></thead><tbody id="recordRows"></tbody></table></div></section><p class="note">This view is read-only. To fix a mistake in an attendance record, contact the LGZ system administrator.</p>`;
+    }
+    function historyView(){
+      return `<section class="card panel"><div class="panel-head"><div><h2>Participant attendance history</h2><div class="section-kicker">Search by participant name or ID.</div></div></div><div class="toolbar"><input id="historySearch" placeholder="Type a name or participant code" /></div><div id="historyResults"><p class="empty">Enter a name or ID to view attendance history.</p></div></section>`;
+    }
+    function reportsView(counts){
+      return `<section class="card panel"><div class="panel-head"><div><h2>Activity attendance report</h2><div class="section-kicker">Select an activity to review attendance and prepare a report.</div></div><div class="actions"><button class="btn btn-secondary" id="printReportBtn">Print / Save PDF</button><button class="btn btn-primary" id="reportCsvBtn">Download CSV</button></div></div><div class="toolbar"><select id="reportSession"><option value="">Select an activity</option>${sessions.map(s=>`<option value="${s.id}">${esc(s.activity_label)}</option>`).join('')}</select></div><div id="reportOutput"><p class="empty">Choose an activity to display its attendance report.</p></div></section><p class="note">To save as PDF, select <b>Print / Save PDF</b>, then choose <b>Save as PDF</b> in your browser’s print window.</p>`;
+    }
+    function sessionsView(counts){
+      return `<section class="card panel"><div class="panel-head"><div><h2>Activity sessions</h2><div class="section-kicker">Create one QR check-in session for each camp activity.</div></div><div class="actions"><button class="btn btn-secondary" id="refreshBtn">↻ Refresh</button><button class="btn btn-primary" id="sessionNewBtn">＋ New activity QR</button></div></div><div class="table-wrap"><table><thead><tr><th>Activity</th><th>Check-ins</th><th>Window</th><th>Status</th><th>Actions</th></tr></thead><tbody>${sessions.length?sessions.map(row=>{const active=sessionIsActive(row);return `<tr><td><div class="session-name">${esc(row.activity_label)}</div><div class="subcell">${dateFmt(row.starts_at)}</div></td><td><button class="text-btn" data-report="${row.id}">${counts[row.id]||0} · View records</button></td><td>${esc(row.duration_label||'—')}</td><td><span class="status ${active?'status-active':'status-closed'}">${active?'Open':row.is_open?'Expired':'Closed'}</span></td><td>${active?`<button class="text-btn" data-qr="${row.id}">Show QR</button> · <button class="text-btn" data-close="${row.id}">Close</button>`:'<span class="subcell">—</span>'}</td></tr>`;}).join(''):'<tr><td colspan="5" class="empty">No activity sessions yet. Create the first QR when you are ready.</td></tr>'}</tbody></table></div></section>`;
+    }
+    function directoryView(){
+      const affiliations=[...new Set(roster.map(x=>x.university||x.affiliation).filter(Boolean))].sort();
+      return `<section class="card panel"><div class="panel-head"><div><h2>Participant directory</h2><div class="section-kicker">${roster.length} registered participant${roster.length===1?'':'s'} · search and update the roster.</div></div><div class="actions"><button class="btn btn-secondary" id="directoryTemplateBtn">Download template</button><button class="btn btn-primary" id="addParticipantBtn">＋ Add participant</button></div></div><div class="toolbar"><input id="directorySearch" placeholder="Search name, matric no., email or phone" /><select id="directoryAffiliation"><option value="">All universities</option>${affiliations.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}</select></div><div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Full name</th><th>Matric No.</th><th>Gender</th><th>Email</th><th>Phone</th><th>University</th><th>Action</th></tr></thead><tbody id="directoryRows"></tbody></table></div></section><p class="note">Contact details are visible to signed-in LGZ administrators in this directory only. They are not shown on the public participant QR check-in page.</p>`;
+    }
+    function bindHome(){document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>navigate(b.dataset.go));}
+    function bindModule(){
+      document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>navigate(b.dataset.go));
+      if(currentSection==='live'){document.querySelector('#refreshBtn').onclick=loadDashboard;bindSessionButtons();refreshTimer=setInterval(loadDashboard,12000);}
+      if(currentSection==='records'){document.querySelector('#recordSearch').oninput=renderRecords;document.querySelector('#recordSession').onchange=renderRecords;document.querySelector('#exportRecordsBtn').onclick=()=>exportRows(filteredAttendance());renderRecords();}
+      if(currentSection==='history'){document.querySelector('#historySearch').oninput=renderHistory;}
+      if(currentSection==='reports'){document.querySelector('#reportSession').onchange=renderReport;document.querySelector('#reportCsvBtn').onclick=()=>exportRows(reportAttendance());document.querySelector('#printReportBtn').onclick=()=>window.print();}
+      if(currentSection==='sessions'){document.querySelector('#refreshBtn').onclick=loadDashboard;document.querySelector('#sessionNewBtn').onclick=createSessionModal;bindSessionButtons();}
+      if(currentSection==='directory'){document.querySelector('#directorySearch').oninput=renderDirectory;document.querySelector('#directoryAffiliation').onchange=renderDirectory;document.querySelector('#directoryTemplateBtn').onclick=()=>download('lgz-roster-template.csv','Nama penuh,No. matrik,Jantina,E-mel,No. telefon,Universiti\nContoh Peserta,000000,Lelaki,,,UUM\n');document.querySelector('#addParticipantBtn').onclick=()=>participantModal();renderDirectory();}
+      if(currentSection==='confirmations'){document.querySelector('#refreshConfirmations').onclick=loadDashboard;document.querySelector('#copyConfirmationLink').onclick=async()=>{const link=new URL(location.href);link.search='';link.searchParams.set('confirm','1');await navigator.clipboard.writeText(link.href);toast('Participant confirmation link copied.');};document.querySelector('#exportConfirmations').onclick=()=>{const rows=[['participant_code','matric_no','full_name','university','confirmation_status','confirmation_at'],...roster.map(p=>[p.participant_code,p.matric_no,p.full_name,p.university||p.affiliation,p.confirmation_status||'no_response',p.confirmation_at||''])];download('lgz-2026-participant-confirmations.csv',rows.map(row=>row.map(csvCell).join(',')).join('\r\n'));};}
+    }
+    async function navigate(section){currentSection=section;await loadDashboard();}
+    function bindSessionButtons(){document.querySelectorAll('[data-qr]').forEach(b=>b.onclick=()=>showQr(sessions.find(x=>x.id===b.dataset.qr)));document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>closeSession(b.dataset.close));document.querySelectorAll('[data-report]').forEach(b=>b.onclick=()=>{currentSection='records';loadDashboard().then(()=>{document.querySelector('#recordSession').value=b.dataset.report;renderRecords();});});}
+    function filteredAttendance(){const q=(document.querySelector('#recordSearch')?.value||'').toLowerCase().trim(),sid=document.querySelector('#recordSession')?.value||'';return attendance.filter(x=>(!sid||x.session_id===sid)&&(!q||[x.participant_code,x.matric_no,x.full_name,x.gender,x.university,x.affiliation,x.activity_label].some(v=>String(v||'').toLowerCase().includes(q))));}
+    function renderRecords(){const rows=filteredAttendance();const target=document.querySelector('#recordRows');if(target)target.innerHTML=rows.length?rows.map(x=>`<tr><td>${esc(x.participant_code)}</td><td>${esc(x.matric_no)}</td><td>${esc(x.full_name)}</td><td>${esc(x.gender)}</td><td>${esc(x.university||x.affiliation)}</td><td>${esc(x.activity_label)}</td><td>${dateFmt(x.checked_in_at)}</td></tr>`).join(''):'<tr><td colspan="7" class="empty">No matching attendance records.</td></tr>';}
+    function renderHistory(){const q=(document.querySelector('#historySearch').value||'').toLowerCase().trim(),box=document.querySelector('#historyResults');if(!q){box.innerHTML='<p class="empty">Enter a name, participant ID or matric number to view attendance history.</p>';return;}const matches=roster.filter(p=>[p.participant_code,p.matric_no,p.full_name,p.university,p.affiliation].some(v=>String(v||'').toLowerCase().includes(q)));if(!matches.length){box.innerHTML='<p class="empty">No participant matches that search.</p>';return;}box.innerHTML=matches.slice(0,30).map(p=>{const rows=attendance.filter(a=>a.participant_code===p.participant_code);return `<div class="panel-head" style="margin-top:14px"><div><h2>${esc(p.full_name)}</h2><div class="section-kicker">${esc(p.participant_code)} · Matric ${esc(p.matric_no)} · ${esc(p.university||p.affiliation)}</div></div><span class="status status-closed">${rows.length} check-ins</span></div><div class="table-wrap"><table><thead><tr><th>Activity</th><th>Checked in</th></tr></thead><tbody>${rows.length?rows.map(a=>`<tr><td>${esc(a.activity_label)}</td><td>${dateFmt(a.checked_in_at)}</td></tr>`).join(''):'<tr><td colspan="2" class="empty">No attendance history yet.</td></tr>'}</tbody></table></div>`;}).join('');}
+    function reportAttendance(){const id=document.querySelector('#reportSession')?.value;return attendance.filter(x=>x.session_id===id);}
+    function renderReport(){const id=document.querySelector('#reportSession').value,out=document.querySelector('#reportOutput');if(!id){out.innerHTML='<p class="empty">Choose an activity to display its attendance report.</p>';return;}const s=sessions.find(x=>x.id===id),rows=reportAttendance(),present=new Set(rows.map(x=>x.participant_code)).size,rate=roster.length?Math.round(present/roster.length*100):0;out.innerHTML=`<div class="metric-row"><div class="metric"><small>Activity</small><strong style="font-size:14px">${esc(s?.activity_label)}</strong></div><div class="metric"><small>Participants checked in</small><strong>${present} / ${roster.length}</strong></div><div class="metric"><small>Roster attendance</small><strong>${rate}%</strong></div></div><div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Matric No.</th><th>Name</th><th>Gender</th><th>University</th><th>Check-in time</th></tr></thead><tbody>${rows.length?rows.map(x=>`<tr><td>${esc(x.participant_code)}</td><td>${esc(x.matric_no)}</td><td>${esc(x.full_name)}</td><td>${esc(x.gender)}</td><td>${esc(x.university||x.affiliation)}</td><td>${dateFmt(x.checked_in_at)}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">No check-ins recorded for this activity.</td></tr>'}</tbody></table></div>`;}
+    function renderDirectory(){const q=(document.querySelector('#directorySearch').value||'').toLowerCase().trim(),aff=document.querySelector('#directoryAffiliation').value;const rows=roster.filter(p=>(!aff||(p.university||p.affiliation)===aff)&&(!q||[p.participant_code,p.full_name,p.matric_no,p.gender,p.email,p.phone,p.university,p.affiliation].some(v=>String(v||'').toLowerCase().includes(q))));document.querySelector('#directoryRows').innerHTML=rows.length?rows.map(p=>`<tr><td>${esc(p.participant_code)}</td><td>${esc(p.full_name)}</td><td>${esc(p.matric_no)}</td><td>${esc(p.gender)}</td><td>${esc(p.email)}</td><td>${esc(p.phone)}</td><td>${esc(p.university||p.affiliation)}</td><td><button class="text-btn" data-edit="${p.id}">Edit</button></td></tr>`).join(''):'<tr><td colspan="8" class="empty">No participants match that search.</td></tr>';document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>participantModal(roster.find(p=>p.id===b.dataset.edit)));}
+    function participantModal(person=null){
+      modalRoot.innerHTML=`<div class="modal-backdrop"><div class="modal card"><div class="modal-head"><h2>${person?'Edit participant':'Add participant'}</h2><button class="close" data-close>×</button></div><form id="participantForm"><div class="field"><label>Participant ID (optional if matric number is entered)</label><input name="code" maxlength="40" value="${esc(person?.participant_code||'')}" placeholder="Leave blank to use the matric number" /></div><div class="field"><label>Full name</label><input name="name" required maxlength="160" value="${esc(person?.full_name||'')}" /></div><div class="field"><label>Matric number</label><input name="matric" required maxlength="40" value="${esc(person?.matric_no||'')}" /></div><div class="field"><label>Gender</label><select name="gender"><option value="">Select gender</option><option ${person?.gender==='Lelaki'?'selected':''}>Lelaki</option><option ${person?.gender==='Perempuan'?'selected':''}>Perempuan</option></select></div><div class="field"><label>Email address</label><input name="email" type="email" maxlength="254" value="${esc(person?.email||'')}" /></div><div class="field"><label>Phone number</label><input name="phone" type="tel" maxlength="30" value="${esc(person?.phone||'')}" /></div><div class="field"><label>University / institution</label><input name="university" required maxlength="100" value="${esc(person?.university||person?.affiliation||'')}" placeholder="UUM, UTeM or MiCoST" /></div><p class="message" id="participantMessage"></p><button class="btn btn-primary" style="width:100%">Save participant</button></form></div></div>`;
+      modalRoot.querySelector('[data-close]').onclick=()=>modalRoot.innerHTML='';modalRoot.querySelector('.modal-backdrop').onclick=e=>{if(e.target===e.currentTarget)modalRoot.innerHTML='';};
+      modalRoot.querySelector('#participantForm').onsubmit=async e=>{e.preventDefault();const f=new FormData(e.currentTarget),matric=String(f.get('matric')||'').trim(),code=String(f.get('code')||'').trim()||matric,university=String(f.get('university')||'').trim(),record={participant_code:code,full_name:String(f.get('name')).trim(),matric_no:matric,gender:String(f.get('gender')||''),affiliation:university,university,email:String(f.get('email')||'').trim()||null,phone:String(f.get('phone')||'').trim()||null};const query=person?db.from('lgz_participants').update(record).eq('id',person.id):db.from('lgz_participants').insert(record);const {error}=await query;if(error){modalRoot.querySelector('#participantMessage').textContent='Could not save. Check that the matric number and participant ID are unique, and that the database update has been applied.';return;}modalRoot.innerHTML='';toast('Participant saved.');await loadDashboard();};
+    }
+    function createSessionModal(){
+      modalRoot.innerHTML=`<div class="modal-backdrop"><div class="modal card"><div class="modal-head"><h2>Start an activity check-in</h2><button class="close" data-close>×</button></div><p class="subhead">A unique QR code will be created for this activity. Only one session can be open at a time.</p><form id="sessionForm"><div class="field"><label>Activity name</label><input required name="activity" maxlength="100" placeholder="e.g. Inclusive Games: Blindfold Challenge" /></div><div class="field"><label>Check-in window</label><select name="minutes"><option value="30">30 minutes</option><option value="60" selected>1 hour</option><option value="120">2 hours</option><option value="360">6 hours</option><option value="720">12 hours</option><option value="1440">24 hours</option></select></div><p class="message" id="modalMessage"></p><button class="btn btn-primary" style="width:100%">Create activity QR</button></form></div></div>`;
+      modalRoot.querySelector('[data-close]').onclick=()=>modalRoot.innerHTML='';modalRoot.querySelector('.modal-backdrop').onclick=e=>{if(e.target===e.currentTarget)modalRoot.innerHTML='';};
+      modalRoot.querySelector('#sessionForm').onsubmit=async e=>{e.preventDefault();const f=new FormData(e.currentTarget),minutes=Number(f.get('minutes')),now=new Date(),end=new Date(now.getTime()+minutes*60000),token=crypto.randomUUID()+crypto.randomUUID();await db.from('lgz_sessions').update({is_open:false}).eq('is_open',true);const {data,error}=await db.from('lgz_sessions').insert({activity_label:String(f.get('activity')).trim(),qr_token:token,is_open:true,starts_at:now.toISOString(),closes_at:end.toISOString(),duration_label:minutes<60?`${minutes} min`:minutes<1440?`${minutes/60} hour${minutes>60?'s':''}`:'24 hours',created_by:adminUser.id}).select().single();if(error){modalRoot.querySelector('#modalMessage').textContent='Could not create this session. Check the database setup.';return;}modalRoot.innerHTML='';currentSection='live';await loadDashboard();showQr(data);};
+    }
+    function showQr(session){
+      if(!session)return;const link=new URL(location.href);link.search='';link.searchParams.set('session',session.id);link.searchParams.set('token',session.qr_token);
+      modalRoot.innerHTML=`<div class="modal-backdrop"><div class="modal card"><div class="modal-head"><h2>Activity QR code</h2><button class="close" data-close>×</button></div><div class="eyebrow" style="color:#007dc5">${esc(session.activity_label)}</div><div class="qr-box" id="qr"></div><div class="url-box">${esc(link.href)}</div><div class="actions" style="margin-top:15px"><button class="btn btn-primary" id="downloadQr">Download QR image</button><button class="btn btn-secondary" id="copyLink">Copy check-in link</button></div><p class="check-foot">Display this QR at the activity. Participants scan it and enter their LGZ participant ID or matric number. The QR expires when the window closes.</p></div></div>`;
+      modalRoot.querySelector('[data-close]').onclick=()=>modalRoot.innerHTML='';modalRoot.querySelector('.modal-backdrop').onclick=e=>{if(e.target===e.currentTarget)modalRoot.innerHTML='';};
+      QRCode.toCanvas(link.href,{width:220,margin:2,errorCorrectionLevel:'H',color:{dark:'#071b3c',light:'#ffffff'}},(err,canvas)=>{if(!err&&document.querySelector('#qr'))document.querySelector('#qr').append(canvas);});
+      modalRoot.querySelector('#downloadQr').onclick=()=>{const c=modalRoot.querySelector('#qr canvas');if(!c)return;const a=document.createElement('a');a.href=c.toDataURL('image/png');a.download=`LGZ-${session.activity_label.replace(/[^a-z0-9]+/gi,'-').slice(0,35)}-QR.png`;a.click();};
+      modalRoot.querySelector('#copyLink').onclick=async()=>{await navigator.clipboard.writeText(link.href);toast('Check-in link copied.');};
+    }
+    async function closeSession(id){if(!confirm('Close this activity check-in now? The QR will stop accepting attendance.'))return;const {error}=await db.from('lgz_sessions').update({is_open:false}).eq('id',id);if(error)toast('Could not close this session.');else{toast('Check-in closed.');await loadDashboard();}}
+    async function attendanceModal(sessionId,title){const rows=attendance.filter(x=>x.session_id===sessionId);modalRoot.innerHTML=`<div class="modal-backdrop"><div class="modal card" style="width:min(720px,100%)"><div class="modal-head"><div><h2>${esc(title)}</h2><div class="section-kicker">${rows.length} participant check-ins</div></div><button class="close" data-close>×</button></div><div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Name</th><th>Affiliation</th><th>Checked in</th></tr></thead><tbody>${rows.length?rows.map(x=>`<tr><td>${esc(x.participant_code)}</td><td>${esc(x.full_name)}</td><td>${esc(x.affiliation)}</td><td>${dateFmt(x.checked_in_at)}</td></tr>`).join(''):'<tr><td colspan="4" class="empty">No check-ins recorded for this activity.</td></tr>'}</tbody></table></div></div></div>`;modalRoot.querySelector('[data-close]').onclick=()=>modalRoot.innerHTML='';modalRoot.querySelector('.modal-backdrop').onclick=e=>{if(e.target===e.currentTarget)modalRoot.innerHTML='';};}
+    function importModal(){
+      modalRoot.innerHTML=`<div class="modal-backdrop"><div class="modal card"><div class="modal-head"><h2>Import participant roster</h2><button class="close" data-close>×</button></div><p class="subhead">Upload the participant columns: <b>Nama penuh, No. matrik, Jantina, E-mel, No. telefon, Universiti</b>. Participant ID is optional; existing people are matched by matric number.</p><div class="field"><label>Participant CSV file</label><input type="file" id="rosterFile" accept=".csv,text/csv" /></div><p class="message" id="modalMessage"></p><button class="btn btn-primary" id="uploadRoster" style="width:100%">Import roster</button><button class="btn btn-secondary" id="templateCsv" style="width:100%;margin-top:9px">Download CSV template</button></div></div>`;
+      modalRoot.querySelector('[data-close]').onclick=()=>modalRoot.innerHTML='';modalRoot.querySelector('.modal-backdrop').onclick=e=>{if(e.target===e.currentTarget)modalRoot.innerHTML='';};
+      modalRoot.querySelector('#templateCsv').onclick=()=>download('lgz-roster-template.csv','Nama penuh,No. matrik,Jantina,E-mel,No. telefon,Universiti\nContoh Peserta,000000,Lelaki,,,UUM\n');
+      modalRoot.querySelector('#uploadRoster').onclick=async()=>{const file=modalRoot.querySelector('#rosterFile').files[0];if(!file){modalRoot.querySelector('#modalMessage').textContent='Choose a CSV file first.';return;}try{const rows=parseCsv(await file.text()),normalise=h=>h.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,''),headers=rows.shift().map(normalise),col=(...aliases)=>headers.findIndex(h=>aliases.includes(h)),ci=col('participantcode','participantid','kodpeserta'),ni=col('fullname','namapenuh','nama'),mi=col('matricno','nomatrik','nombormatrik','matrik'),gi=col('gender','jantina'),ei=col('email','emel'),pi=col('phone','phoneno','notelefon','nombortelefon','telephone'),ui=col('university','universiti','affiliation','institution');if(ni<0||mi<0)throw Error('The CSV must contain a full name and matric number column.');const existingByCode=new Map(roster.map(p=>[String(p.participant_code||'').toLowerCase(),p])),existingByMatric=new Map(roster.filter(p=>p.matric_no).map(p=>[String(p.matric_no).toLowerCase(),p]));const batch=rows.filter(r=>r[ni]?.trim()&&r[mi]?.trim()).map(r=>{const matric=r[mi].trim(),matched=existingByMatric.get(matric.toLowerCase()),typedCode=ci>=0?(r[ci]||'').trim():'',code=typedCode||matched?.participant_code||matric,existing=existingByCode.get(code.toLowerCase())||matched,university=ui>=0?(r[ui]||'').trim():(existing?.university||existing?.affiliation||''),email=ei>=0?(r[ei]||'').trim():(existing?.email||''),phone=pi>=0?(r[pi]||'').trim():(existing?.phone||'');return{participant_code:code,full_name:r[ni].trim(),matric_no:matric,gender:gi>=0?(r[gi]||'').trim():(existing?.gender||''),affiliation:university,university,email:email||existing?.email||null,phone:phone||existing?.phone||null};});if(!batch.length)throw Error('No participant rows with both name and matric number were found.');for(let i=0;i<batch.length;i+=300){const {error}=await db.from('lgz_participants').upsert(batch.slice(i,i+300),{onConflict:'participant_code'});if(error)throw Error('Import failed. Check duplicate participant IDs or matric numbers and confirm the database update has been applied.');}modalRoot.innerHTML='';toast(`${batch.length} participant records imported.`);await loadDashboard();}catch(err){modalRoot.querySelector('#modalMessage').textContent=err.message;}};
+    }
+    function exportRows(rows){const records=[['participant_code','matric_no','full_name','gender','university','activity','checked_in_at'],...rows.map(x=>[x.participant_code,x.matric_no,x.full_name,x.gender,x.university||x.affiliation,x.activity_label,x.checked_in_at])];download('lgz-2026-attendance.csv',records.map(row=>row.map(csvCell).join(',')).join('\r\n'));toast(`${rows.length} attendance records exported.`);}
+    function parseCsv(text){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const ch=text[i];if(quoted){if(ch==='"'&&text[i+1]==='"'){cell+='"';i++;}else if(ch==='"')quoted=false;else cell+=ch;}else if(ch==='"')quoted=true;else if(ch===','){row.push(cell);cell='';}else if(ch==='\n'){row.push(cell.replace(/\r$/,''));rows.push(row);row=[];cell='';}else cell+=ch;}if(cell.length||row.length){row.push(cell.replace(/\r$/,''));rows.push(row);}return rows.filter(r=>r.some(v=>v.trim()));}
+    const csvCell=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
+    function download(name,text){const blob=new Blob([text],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href);}
+    const routeParams=new URLSearchParams(location.search);if(routeParams.has('session'))checkInPage();else if(routeParams.has('confirm'))confirmationPage();else dashboard();
+  </script>
 </body>
 </html>
