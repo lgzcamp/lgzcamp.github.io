@@ -37,7 +37,7 @@
     const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const dateFmt = value => new Intl.DateTimeFormat('en-MY',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kuala_Lumpur'}).format(new Date(value));
     const toast = message => { const el=document.querySelector('#toast');el.textContent=message;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),3200); };
-    let adminUser=null, currentSection='home', roster=[], sessions=[], attendance=[], refreshTimer=null;
+    let adminUser=null, currentSection='home', roster=[], sessions=[], attendance=[], confirmations=[], refreshTimer=null;
     const modules=[
       {id:'live',icon:'◉',title:'Live Attendance',desc:'Open a QR check-in and monitor arrivals for the current activity.'},
       {id:'records',icon:'▤',title:'Attendance Records',desc:'Review check-ins across activities and find a participant or session.'},
@@ -45,6 +45,7 @@
       {id:'reports',icon:'▥',title:'Attendance Reports',desc:'Download CSV reports or print a report to save as PDF.'},
       {id:'sessions',icon:'▦',title:'Session Management',desc:'Create activity QR sessions, show codes and close check-in windows.'},
       {id:'directory',icon:'♙',title:'Participant Directory',desc:'Search participants, add or edit a record, and import roster updates.'},
+      {id:'confirmations',icon:'✓',title:'Participant Confirmation',desc:'Review who can attend the programme before the camp.'},
     ];
 
     function checkInPage(){
@@ -53,6 +54,11 @@
       if(!sessionId||!token){document.querySelector('#sessionTitle').textContent='Invalid QR code';document.querySelector('#checkForm').classList.add('hidden');return;}
       db.rpc('get_public_session',{p_session_id:sessionId,p_qr_token:token}).then(({data,error})=>{if(error||!data?.ok){document.querySelector('#sessionTitle').textContent='This session is closed or unavailable';document.querySelector('#checkForm').classList.add('hidden');return;}document.querySelector('#sessionTitle').textContent=data.activity_label;});
       document.querySelector('#checkForm').addEventListener('submit',async e=>{e.preventDefault();const btn=e.submitter;btn.disabled=true;btn.textContent='Checking…';const code=document.querySelector('#participantCode').value.trim();const {data,error}=await db.rpc('lgz_check_in',{p_session_id:sessionId,p_qr_token:token,p_participant_code:code});if(error||!data?.ok){document.querySelector('#checkMessage').textContent=data?.message||'We could not record this check-in. Check your ID and try again.';btn.disabled=false;btn.textContent='Confirm attendance';return;}const isDup=data.status==='already_recorded';document.querySelector('#checkContent').innerHTML=`<div class="check-result"><div class="result-icon">✓</div><h1 class="check-title">${isDup?'Already recorded':'You’re checked in'}</h1><p class="check-intro">${isDup?'Your attendance for this activity was already recorded.':'Your attendance has been recorded successfully.'}</p><div class="session-chip"><small>Activity session</small><strong>${esc(data.activity_label)}</strong></div><div class="check-foot">You can close this page now.</div></div>`;});
+    }
+    function confirmationPage(){
+      document.querySelector('#topStatus').textContent='Participant RSVP';
+      app.innerHTML=`<section class="check-page"><div class="card check-card"><div class="check-logo"><div class="brand-mark">LGZ</div><div class="eyebrow" style="color:#60748e">PERKESO × UUM SBM</div></div><div id="confirmContent"><h1 class="check-title">Confirm your attendance</h1><p class="check-intro">Please confirm whether you can attend LINDUNG Gen-Z Leaders Camp 2026. Enter your LGZ participant ID and matric number. If you do not know your LGZ ID, use your matric number in both fields.</p><form id="confirmForm"><div class="field"><label for="confirmCode">LGZ participant ID or matric number</label><input id="confirmCode" required autocomplete="off" maxlength="40" placeholder="LGZ ID, or your matric number" /></div><div class="field"><label for="confirmMatric">Matric number</label><input id="confirmMatric" required autocomplete="off" maxlength="40" placeholder="Your matric number" /></div><div class="field"><label for="confirmResponse">Your confirmation</label><select id="confirmResponse" required><option value="">Select one response</option><option value="attending">Yes, I can attend</option><option value="cannot_attend">No, I cannot attend</option><option value="unsure">I am not sure yet</option></select></div><p class="message" id="confirmMessage" aria-live="polite"></p><button class="btn btn-primary" id="confirmSubmit" style="width:100%;padding:13px" type="submit">Submit confirmation</button></form><div class="check-foot">Your response is shared with the LGZ organising team only.</div></div></div></section>`;
+      document.querySelector('#confirmForm').addEventListener('submit',async e=>{e.preventDefault();const btn=document.querySelector('#confirmSubmit'),message=document.querySelector('#confirmMessage');btn.disabled=true;btn.textContent='Submitting…';message.textContent='';const {data,error}=await db.rpc('lgz_submit_confirmation',{p_participant_code:document.querySelector('#confirmCode').value.trim(),p_matric_no:document.querySelector('#confirmMatric').value.trim(),p_response:document.querySelector('#confirmResponse').value});if(error||!data?.ok){message.textContent=data?.message||'We could not submit your response. Please check your details and try again.';btn.disabled=false;btn.textContent='Submit confirmation';return;}const labels={attending:'You confirmed that you can attend.',cannot_attend:'Your response that you cannot attend has been recorded.',unsure:'Your response has been recorded.'};document.querySelector('#confirmContent').innerHTML=`<div class="check-result"><div class="result-icon">✓</div><h1 class="check-title">Confirmation received</h1><p class="check-intro">${labels[data.response]||'Your response has been recorded.'}</p><p class="check-foot">You can submit again if your plans change.</p></div>`;});
     }
     function loginPage(message=''){
       document.querySelector('#topStatus').textContent='Admin access';
@@ -69,13 +75,13 @@
       await loadDashboard();
     }
     async function loadDashboard(){
-      const [p,s,a]=await Promise.all([
-        db.from('lgz_participants').select('id,participant_code,full_name,matric_no,gender,affiliation,university,email,phone,created_at').order('full_name'),
+      const [p,s,a,c]=await Promise.all([
+        db.from('lgz_participants').select('id,participant_code,full_name,matric_no,gender,affiliation,university,email,phone,confirmation_status,confirmation_at,created_at').order('full_name'),
         db.from('lgz_sessions').select('*').order('created_at',{ascending:false}),
         db.from('lgz_attendance_view').select('*').order('checked_in_at',{ascending:false}),
       ]);
       if(p.error||s.error||a.error){toast('Could not load records. Check the Supabase setup and access policies.');return;}
-      roster=p.data||[];sessions=s.data||[];attendance=a.data||[];renderWorkspace();
+      roster=p.data||[];sessions=s.data||[];attendance=a.data||[];confirmations=roster.filter(p=>p.confirmation_status);renderWorkspace();
     }
     function sessionIsActive(row){const now=Date.now();return row.is_open&&now>=new Date(row.starts_at).getTime()&&now<=new Date(row.closes_at).getTime();}
     function countsBySession(){const counts={};attendance.forEach(x=>counts[x.session_id]=(counts[x.session_id]||0)+1);return counts;}
@@ -99,7 +105,12 @@
       if(currentSection==='reports')return reportsView(counts);
       if(currentSection==='sessions')return sessionsView(counts);
       if(currentSection==='directory')return directoryView();
+      if(currentSection==='confirmations')return confirmationsView();
       return homeView(counts,active);
+    }
+    function confirmationsView(){
+      const attending=confirmations.filter(x=>x.confirmation_status==='attending').length,cannot=confirmations.filter(x=>x.confirmation_status==='cannot_attend').length,unsure=confirmations.filter(x=>x.confirmation_status==='unsure').length;
+      return `<section class="grid stats"><div class="card stat"><div class="stat-label">Responses received</div><div class="stat-value">${confirmations.length}</div><div class="stat-note">Of ${roster.length} registered participants</div></div><div class="card stat"><div class="stat-label">Can attend</div><div class="stat-value">${attending}</div><div class="stat-note">Confirmed attending</div></div><div class="card stat"><div class="stat-label">Cannot attend</div><div class="stat-value">${cannot}</div><div class="stat-note">Reported unavailable</div></div><div class="card stat"><div class="stat-label">Not sure</div><div class="stat-value">${unsure}</div><div class="stat-note">Need follow-up</div></div></section><section class="card panel"><div class="panel-head"><div><h2>Programme attendance confirmation</h2><div class="section-kicker">Share the RSVP link through WhatsApp. This list updates when you refresh.</div></div><div class="actions"><button class="btn btn-secondary" id="refreshConfirmations">↻ Refresh</button><button class="btn btn-secondary" id="copyConfirmationLink">Copy participant form link</button><button class="btn btn-primary" id="exportConfirmations">Download CSV</button></div></div><div class="note">Participant confirmation is separate from QR check-ins. The QR records actual attendance at each activity.</div><div class="table-wrap"><table><thead><tr><th>Participant ID</th><th>Matric No.</th><th>Name</th><th>University</th><th>Response</th><th>Submitted</th></tr></thead><tbody>${roster.length?roster.map(p=>`<tr><td>${esc(p.participant_code)}</td><td>${esc(p.matric_no)}</td><td>${esc(p.full_name)}</td><td>${esc(p.university||p.affiliation)}</td><td>${p.confirmation_status?`<span class="status ${p.confirmation_status==='attending'?'status-active':'status-closed'}">${p.confirmation_status==='attending'?'Can attend':p.confirmation_status==='cannot_attend'?'Cannot attend':'Not sure'}</span>`:'<span class="subcell">No response</span>'}</td><td>${p.confirmation_at?dateFmt(p.confirmation_at):'—'}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">No participants are in the roster yet.</td></tr>'}</tbody></table></div></section>`;
     }
     function liveView(counts,active){
       const rows=active?attendance.filter(x=>x.session_id===active.id):[];
@@ -130,6 +141,7 @@
       if(currentSection==='reports'){document.querySelector('#reportSession').onchange=renderReport;document.querySelector('#reportCsvBtn').onclick=()=>exportRows(reportAttendance());document.querySelector('#printReportBtn').onclick=()=>window.print();}
       if(currentSection==='sessions'){document.querySelector('#refreshBtn').onclick=loadDashboard;document.querySelector('#sessionNewBtn').onclick=createSessionModal;bindSessionButtons();}
       if(currentSection==='directory'){document.querySelector('#directorySearch').oninput=renderDirectory;document.querySelector('#directoryAffiliation').onchange=renderDirectory;document.querySelector('#directoryTemplateBtn').onclick=()=>download('lgz-roster-template.csv','Nama penuh,No. matrik,Jantina,E-mel,No. telefon,Universiti\nContoh Peserta,000000,Lelaki,,,UUM\n');document.querySelector('#addParticipantBtn').onclick=()=>participantModal();renderDirectory();}
+      if(currentSection==='confirmations'){document.querySelector('#refreshConfirmations').onclick=loadDashboard;document.querySelector('#copyConfirmationLink').onclick=async()=>{const link=new URL(location.href);link.search='';link.searchParams.set('confirm','1');await navigator.clipboard.writeText(link.href);toast('Participant confirmation link copied.');};document.querySelector('#exportConfirmations').onclick=()=>{const rows=[['participant_code','matric_no','full_name','university','confirmation_status','confirmation_at'],...roster.map(p=>[p.participant_code,p.matric_no,p.full_name,p.university||p.affiliation,p.confirmation_status||'no_response',p.confirmation_at||''])];download('lgz-2026-participant-confirmations.csv',rows.map(row=>row.map(csvCell).join(',')).join('\r\n'));};}
     }
     async function navigate(section){currentSection=section;await loadDashboard();}
     function bindSessionButtons(){document.querySelectorAll('[data-qr]').forEach(b=>b.onclick=()=>showQr(sessions.find(x=>x.id===b.dataset.qr)));document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>closeSession(b.dataset.close));document.querySelectorAll('[data-report]').forEach(b=>b.onclick=()=>{currentSection='records';loadDashboard().then(()=>{document.querySelector('#recordSession').value=b.dataset.report;renderRecords();});});}
@@ -169,7 +181,7 @@
     function parseCsv(text){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const ch=text[i];if(quoted){if(ch==='"'&&text[i+1]==='"'){cell+='"';i++;}else if(ch==='"')quoted=false;else cell+=ch;}else if(ch==='"')quoted=true;else if(ch===','){row.push(cell);cell='';}else if(ch==='\n'){row.push(cell.replace(/\r$/,''));rows.push(row);row=[];cell='';}else cell+=ch;}if(cell.length||row.length){row.push(cell.replace(/\r$/,''));rows.push(row);}return rows.filter(r=>r.some(v=>v.trim()));}
     const csvCell=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
     function download(name,text){const blob=new Blob([text],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href);}
-    if(new URLSearchParams(location.search).has('session'))checkInPage();else dashboard();
+    const routeParams=new URLSearchParams(location.search);if(routeParams.has('session'))checkInPage();else if(routeParams.has('confirm'))confirmationPage();else dashboard();
   </script>
 </body>
 </html>
